@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overleaf Review Reader</title>
+  <link rel="stylesheet" href="review.css">
+  <script type="module" src="review.js"></script>
+</head>
+<body>
+  <main>
+    <header class="heading">
+      <div>
+        <h1 data-message="page_title">Overleaf comments</h1>
+        <p id="project" hidden></p>
+      </div>
+      <label class="language">
+        <span data-message="language">Language</span>
+        <select id="language" disabled>
+          <option value="auto" data-message="language_auto">Follow Chrome</option>
+          <option value="en" lang="en">English</option>
+          <option value="zh-CN" lang="zh-CN">简体中文</option>
+        </select>
+      </label>
+    </header>
+    <p class="privacy" data-message="privacy_note">Reads comments, replies, author names and dates in the open Overleaf project. Selected source text is optional. The extension keeps this data on your device and never changes the project.</p>
+    <div class="controls">
+      <button id="refresh" type="button" disabled>Read project comments</button>
+      <label><input id="include-quotes" type="checkbox" disabled> <span data-message="include_quotes">Include selected source text</span></label>
+      <button id="export" type="button" disabled data-message="export">Export project JSON</button>
+    </div>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <details id="diagnostics" hidden>
+      <summary data-message="diagnostics">Read diagnostics (no comment text, names or project ID)</summary>
+      <pre id="diagnostic-text"></pre>
+    </details>
+    <div id="filters" class="controls" hidden>
+      <label><span data-message="status">Status</span>
+        <select id="status">
+          <option value="all" data-message="all">All</option>
+          <option value="open" data-message="open">Open</option>
+          <option value="resolved" data-message="resolved">Resolved</option>
+        </select>
+      </label>
+      <label><span data-message="search">Search</span> <input id="query" type="search" placeholder="Comment, reply or author"></label>
+    </div>
+    <div id="threads"></div>
+  </main>
+</body>
+</html>

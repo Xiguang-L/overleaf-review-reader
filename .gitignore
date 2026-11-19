@@ -1,0 +1,9 @@
+__pycache__/
+node_modules/
+dist/
+.env
+.auth/
+*.zip
+*.crx
+*.pem
+overleaf-review-*.json
